@@ -1,15 +1,14 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./App.css";
-import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Paste from "./components/Paste";
 import ViewPaste from "./components/ViewPaste";
+import Navbar from "./components/Navbar";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <div>
+      <div className="w-full h-full flex flex-col">
         <Navbar />
         <Home />
       </div>
@@ -18,7 +17,7 @@ const router = createBrowserRouter([
   {
     path: "/pastes",
     element: (
-      <div>
+      <div className="w-full h-full flex flex-col">
         <Navbar />
         <Paste />
       </div>
@@ -27,7 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/pastes/:id",
     element: (
-      <div>
+      <div className="w-full h-full flex flex-col">
         <Navbar />
         <ViewPaste />
       </div>
@@ -36,11 +35,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return (
-    <div>
-      <RouterProvider router={router} />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

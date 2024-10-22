@@ -64,6 +64,11 @@ export const pasteSlice = createSlice({
         toast.success("Paste Removed Successfully!");
       }
     },
+    resetPaste: (state) => {
+      state.pastes = [];
+      // Update to localstorage
+      localStorage.removeItem("pastes");
+    },
   },
 });
 
